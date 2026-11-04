@@ -1,6 +1,6 @@
 [project]
 name = "mime-parameter-value-encoder"
-version = "0.1.0"
+version = "0.1.1"
 description = "Encodes non-ASCII values in Content-Disposition header parameters using RFC 2231 continuations"
 requires-python = ">=3.10"
 dependencies = []
