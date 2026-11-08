@@ -28,3 +28,10 @@ A SPACE or any RFC-2045 tspecial character (`()<>@,;:"/[]?=`) triggers full
 encoding of the entire value, even if the rest is ASCII. The library never
 mixes bare and percent-encoded characters in one segment, which keeps the
 output predictable for every parser.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
